@@ -2,7 +2,7 @@
 #include <iostream>
 #include <fstream>
 
-int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCmdLine, int cmdShow)
+int main()
 {
     ShowWindow( GetConsoleWindow(), SW_HIDE );
 
